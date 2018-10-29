@@ -3,37 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>BAMBOO BOOK</title>
+  <link rel="icon" href="_media/favicon.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="vendor/themes/vue.css">
 </head>
 <body>
-  <div id="app">加载中</div>
+  <div id="app">
+    加载中</div>
   <script>
-    window.$docsify = {
-      name: 'BAMBOO BOOK', //目录上名字
-      loadSidebar: true,//侧边栏默认加载加载 _sidebar.md
-      loadSidebar:'sidebar.md',
-      subMaxLevel: 1,//自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能，渲染层级，1-6
-      loadNavbar: true,  // 导航栏默认加载 _navbar.md
-      loadNavbar: 'navbar.md',// 导航栏自定义加载 nav.md
-      auto2top: true,//切换页面后是否自动跳转到页面顶部。
-      coverpage: true,
-      coverpage: {
-        '/': 'cover.md',
-        '/second/': 'cover.md'
-      },
-      repo: 'http://localhost:3000/',//右上角挂件地址，默认是github
-      plugins: [
-      function (hook, vm) {
-        var footer = [
-        '<hr/>',
+    var dsf_name = 'script_dsf_name';
+    var dsf_homepage= '';
+    var dsf_loadSidebar= 'sidebar.md';
+    var dsf_loadNavbar= 'navbar.md';
+    var dsf_repo= 'http://localhost:3000/';
+    var dsf_coverpage = {'/': 'cover.md',
+    '/basic/': 'cover.md',
+    '/basic/network/': 'cover.md',
+    '/basic/browser/': 'cover.md'
+    };
+    var dsf_footer = [
         '<footer>',
-        '<span>------Test By Bamboo------</span>',
+        '<blockquote><p>Document By Bamboo</p></blockquote>',
+        '<p class="tip">格物致知，知行合一</p>',
         '</footer>'
       ].join('')
-
+    window.$docsify = {
+      name: dsf_name, //目录上名字
+      //homepage:dsf_homepage,
+      //basePath: 'https://docsify.js.org/',// 直接渲染其他域名的文档
+      loadSidebar: true,//侧边栏默认加载加载 _sidebar.md
+      loadSidebar:dsf_loadSidebar,
+      subMaxLevel: 1,//自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能，渲染层级，1-6
+      loadNavbar: true,  // 导航栏默认加载 _navbar.md
+      loadNavbar: dsf_loadNavbar,// 导航栏自定义加载 nav.md
+      auto2top: true,//切换页面后是否自动跳转到页面顶部。
+      coverpage: true,
+      coverpage: dsf_coverpage,
+      repo: dsf_repo,//右上角挂件地址，默认是github
+      pagination: {
+        previousText: '上一章节',
+        nextText: '下一章节',
+      },
+      search: {
+        maxAge: 3600000, // 过期时间，单位毫秒，默认一天,此时一个小时
+        paths: 'auto',
+        placeholder: '搜索',
+        noData: '没有记录！'
+      },
+      plugins: [
+      function (hook, vm) {
+       
         hook.init(function() {
           // 初始化时调用，只调用一次，没有参数。
         })
@@ -48,7 +69,7 @@
           // 解析成 html 后调用。beforeEach 和 afterEach 支持处理异步逻辑
           // ...
           // 异步处理完成后调用 next(html) 返回结果
-          html = html + '\n----\n'+ footer;
+          html = html + dsf_footer;
           next(html)
         })
 
@@ -68,6 +89,18 @@
     ]
     }
   </script>
+   <!-- docsify -->
   <script src="vendor/docsify.js"></script>
+   <!-- plugins -->
+  <script src="vendor/plugins/search.js"></script>
+  <script src="vendor/plugins/docsify-pagination.min.js"></script>
+  <script src="vendor/plugins/docsify-plantuml.min.js"></script>
+  <script src="vendor/plugins/docsify-copy-code.min.js"></script>
+  
+  <!-- sequence-diagram deps -->
+  <!-- <script src="vendor/plugins/raphael.min.js"></script> -->
+  <!-- <script src="vendor/plugins/underscore.js"></script> -->
+  <!-- plugins -->
+  <!-- <script src="vendor/plugins/docsify-sequence-diagram.min.js"></script> -->
 </body>
 </html>

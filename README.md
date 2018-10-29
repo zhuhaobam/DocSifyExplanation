@@ -1,12 +1,13 @@
-# docsify
+# docsify更多请运行查看
 
-GitHub Pages
-GitHub Pages 支持从三个地方读取文件
+# docsify-cli安装
 
-docs/ 目录
-master 分支
-gh-pages 分支
+> npm i docsify-cli -g
 
-## License
+# docsify-cli使用{docsify-ignore}  <!--{docsify-ignore}忽略副标题-->
 
-MIT
+> docsify init D:/DOCSIFY/DocSifyExplanation/docs   --local
+
+> docsify serve  D:/DOCSIFY/DocSifyExplanation/docs   --open //////[docsify serve --open]
+
+

@@ -1,13 +1,15 @@
-![logo](_media/icon.svg)
+![logo](_media/icon_green.svg)
 
 
-# docsify
+# /  
 
-> 很开心使用你
+> Document 首页
 
+![](/_media_/bg.jpg)
 
 [GitHub docsify](https://github.com/docsifyjs/docsify/)
 [zh-cn docsify](https://docsify.js.org/#/zh-cn/quickstart)
+
 
 <!-- 背景图片 -->
 <!-- ![](/_media_/bg.jpg)-->

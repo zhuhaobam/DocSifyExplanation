@@ -1,3 +1,0 @@
-# docsify
-
-> Second Guide
