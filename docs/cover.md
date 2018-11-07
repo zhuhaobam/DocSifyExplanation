@@ -1,9 +1,6 @@
 ![logo](_media/icon_green.svg)
 
-
-# /  
-
-> Document 首页
+> Docsify
 
 ![](/_media_/bg.jpg)
 

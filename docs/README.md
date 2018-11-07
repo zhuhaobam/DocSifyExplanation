@@ -1,3 +1,8 @@
+# 环境
+
+>需要先安装Node.js
+
+
 # docsify-cli安装{docsify-ignore}
 
 > npm i docsify-cli -g
